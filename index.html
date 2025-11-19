@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Mandiri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #003399;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #003399;
+        }
+
+        .menu-btn {
+            background-color: #0055cc;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .menu-btn:hover {
+            background-color: #002b80;
+        }
+
+        .pilihan {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .pilihan button {
+            background-color: #003399;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 8px;
+            cursor: pointer;
+        }
+
+        .pilihan button:hover {
+            background-color: #0055cc;
+        }
+
+        section {
+            display: none;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #003399;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bank Mandiri</h1>
+        <p>Terdepan, Terpercaya, Tumbuh Bersama Anda</p>
+    </header>
+
+    <div class="container" id="home">
+        <h2>Selamat Datang di Website Bank Mandiri</h2>
+        <p>Silakan tekan tombol di bawah untuk memilih menu.</p>
+        <button class="menu-btn" onclick="tampilkanMenu()">Buka Menu</button>
+
+        <div class="pilihan" id="pilihanMenu">
+            <button onclick="tampilkanHalaman('tentang')">Tentang Kami</button>
+            <button onclick="tampilkanHalaman('layanan')">Layanan</button>
+            <button onclick="tampilkanHalaman('kontak')">Kontak</button>
+        </div>
+    </div>
+
+    <section id="tentang" class="container">
+        <h2>Tentang Bank Mandiri</h2>
+        <img src="BANKMANDIRI.png" alt="Logo Bank Mandiri">
+        <p>
+            Bank Mandiri adalah salah satu bank terbesar di Indonesia yang berdiri sejak tahun 1998.
+            Bank ini merupakan hasil penggabungan empat bank milik pemerintah. 
+            Dengan visi menjadi lembaga keuangan terbaik di Indonesia, Bank Mandiri terus berinovasi 
+            untuk melayani masyarakat dengan layanan perbankan modern dan digital.
+        </p>
+        <button onclick="kembali()">⬅ Kembali ke Menu</button>
+    </section>
+
+    <section id="layanan" class="container">
+        <h2>Layanan Kami</h2>
+        <ul>
+            <li>Tabungan Mandiri</li>
+            <li>Kartu Kredit Mandiri</li>
+            <li>Mandiri Online Banking</li>
+            <li>Pinjaman & Investasi</li>
+            <li>Layanan Bisnis & Korporasi</li>
+        </ul>
+        <button onclick="kembali()">⬅ Kembali ke Menu</button>
+    </section>
+
+    <section id="kontak" class="container">
+        <h2>Kontak Kami</h2>
+        <p>Email: <a href="mailto:info@bankmandiri.co.id">info@bankmandiri.co.id</a></p>
+        <p>Telepon: 14000</p>
+        <p>Alamat: Jl. Jenderal Gatot Subroto Kav. 36-38, Jakarta 12190</p>
+        <button onclick="kembali()">⬅ Kembali ke Menu</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Bank Mandiri. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+        function tampilkanMenu() {
+            document.getElementById("pilihanMenu").style.display = "block";
+        }
+
+        function tampilkanHalaman(id) {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("tentang").style.display = "none";
+            document.getElementById("layanan").style.display = "none";
+            document.getElementById("kontak").style.display = "none";
+            document.getElementById(id).style.display = "block";
+            window.scrollTo(0, 0);
+        }
+
+        function kembali() {
+            document.getElementById("home").style.display = "block";
+            document.getElementById("tentang").style.display = "none";
+            document.getElementById("layanan").style.display = "none";
+            document.getElementById("kontak").style.display = "none";
+            document.getElementById("pilihanMenu").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
